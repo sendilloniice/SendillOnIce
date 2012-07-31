@@ -1,0 +1,17 @@
+﻿<Window x:Class="wpfSendillOnIce.winUserList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="winUserList" Height="400" Width="600" WindowStyle="SingleBorderWindow" WindowStartupLocation="Manual" BorderThickness="1" SizeToContent="Manual" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="260*" />
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Stretch" Name="stackPanel1" VerticalAlignment="Stretch" Background="DarkSeaGreen" Orientation="Horizontal" Grid.Row="0">
+            <Image Source="/wpfSendillOnIce;component/Images/user48.png" VerticalAlignment="Top" HorizontalAlignment="Left" Width="32" Height="32" Margin="8" />
+            <TextBlock Text="Notendalisti" TextAlignment="Left" VerticalAlignment="Center" Width="130" FontSize="22" FontFamily="Segoe UI" Foreground="White" />
+        </StackPanel>
+        <Border BorderBrush="Silver" BorderThickness="1" Height="100" HorizontalAlignment="Left" Margin="158,83,0,0" Name="border1" VerticalAlignment="Top" Width="200" />
+        <Button Content="Loka" Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="466,269,0,0" Name="button1" VerticalAlignment="Top" Width="100" Background="DarkSeaGreen" Foreground="White" FontSize="14" Click="button1_Click" />
+    </Grid>
+</Window>

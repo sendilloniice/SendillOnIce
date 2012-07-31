@@ -1,0 +1,11 @@
+﻿<Window x:Class="wpfSendillOnIce.winUsers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="winUsers" Height="300" Width="500" xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my1="clr-namespace:wpfSendillOnIce" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="tbl_usersViewSource" d:DesignSource="{d:DesignInstance my1:tbl_users, CreateList=True}" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource tbl_usersViewSource}">
+        <my:DataGrid DisplayMemberPath="name" Height="184" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="12,52,0,0" Name="tbl_usersDataGrid" SelectedValuePath="userid" VerticalAlignment="Top" Width="454" />
+    </Grid>
+</Window>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbpallettModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="dbpallettModelStoreContainer">
+          <EntitySet Name="tbl_ledgers" EntityType="dbpallettModel.Store.tbl_ledgers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_users" EntityType="dbpallettModel.Store.tbl_users" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="tbl_ledgers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="datefrom" Type="date" Nullable="false" />
+          <Property Name="dateto" Type="date" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="income" Type="real" />
+          <Property Name="cost" Type="real" />
+          <Property Name="vsk" Type="real" />
+          <Property Name="note" Type="nvarchar" MaxLength="50" />
+          <Property Name="owner_id" Type="int" Nullable="false" />
+          <Property Name="account_period_id" Type="int" Nullable="false" />
+          <Property Name="is_open" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbpallettModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="dbpallettEntities">
+          <EntitySet Name="tbl_ledgers" EntityType="dbpallettModel.tbl_ledgers" />
+          <EntitySet Name="tbl_users" EntityType="dbpallettModel.tbl_users" />
+        </EntityContainer>
+        <EntityType Name="tbl_ledgers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datefrom" Type="DateTime" Nullable="false" />
+          <Property Name="dateto" Type="DateTime" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="income" Type="Single" />
+          <Property Name="cost" Type="Single" />
+          <Property Name="vsk" Type="Single" />
+          <Property Name="note" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="owner_id" Type="Int32" Nullable="false" />
+          <Property Name="account_period_id" Type="Int32" Nullable="false" />
+          <Property Name="is_open" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="dbpallettModelStoreContainer" CdmEntityContainer="dbpallettEntities">
+          <EntitySetMapping Name="tbl_ledgers"><EntityTypeMapping TypeName="dbpallettModel.tbl_ledgers"><MappingFragment StoreEntitySet="tbl_ledgers">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="datefrom" ColumnName="datefrom" />
+            <ScalarProperty Name="dateto" ColumnName="dateto" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="income" ColumnName="income" />
+            <ScalarProperty Name="cost" ColumnName="cost" />
+            <ScalarProperty Name="vsk" ColumnName="vsk" />
+            <ScalarProperty Name="note" ColumnName="note" />
+            <ScalarProperty Name="owner_id" ColumnName="owner_id" />
+            <ScalarProperty Name="account_period_id" ColumnName="account_period_id" />
+            <ScalarProperty Name="is_open" ColumnName="is_open" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tbl_users"><EntityTypeMapping TypeName="dbpallettModel.tbl_users"><MappingFragment StoreEntitySet="tbl_users">
+            <ScalarProperty Name="userid" ColumnName="userid" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="username" ColumnName="username" />
+            <ScalarProperty Name="password" ColumnName="password" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="entPallettModel">
+        <EntityTypeShape EntityType="dbpallettModel.tbl_ledgers" Width="1.5" PointX="0.75" PointY="0.75" Height="3.1340950520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbpallettModel.tbl_users" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
